@@ -1,39 +1,29 @@
 # Yaqing Shen — Personal academic website
 
-A lightweight academic portfolio built for GitHub Pages. A white, research-focused layout with a personal headshot, figures from published papers, three research directions, six selected papers with a first-author filter, academic background, profile links, and a printable research CV.
+A buildless website for GitHub Pages, combining a wide blue-gray title banner and fixed navigation with a white background and figure-led research cards.
 
-## Preview locally
+## Pages
 
-From this directory, run:
+- `index.html`: headshot, biography, and three research cards with figures, journal names, dates, short abstract summaries, and paper links.
+- `cv.html`: printable research CV, academic history, awards, skills, and selected publications.
+- `publications.html`: six selected papers with a first-author filter and a link to the full Google Scholar record.
+- `contacts.html`: current professional email and Google Scholar, ORCID, LinkedIn, and GitHub links.
 
-```sh
-python3 -m http.server 4173 --bind 127.0.0.1
-```
+All four pages share the banner, navigation, and footer. The navigation remains fixed while scrolling; the larger title band scrolls with the page. Mobile navigation uses a Menu button. Figures open in a keyboard-accessible viewer.
 
-Open [http://127.0.0.1:4173](http://127.0.0.1:4173). No installation or framework build is required.
+## Preview and update
 
-## Publish on GitHub Pages
+Run `python3 -m http.server 4173 --bind 127.0.0.1`, then open http://127.0.0.1:4173/.
 
-1. Create a public repository named **yaqingshen.github.io** under the **YaqingShen** account, or use the existing repository if it already exists.
-2. Put `index.html`, `cv.html`, `styles.css`, `site-data.js`, `site-content.js`, `app.js`, `assets/`, and `.nojekyll` in the root of the `main` branch. The README and optional `scripts/` can be included too. Keep `.preview/` out of Git.
-3. In **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/ (root)**, and save.
-4. Once GitHub finishes publishing, use **Visit site** in Pages settings. The intended address is `https://yaqingshen.github.io/`.
+Edit `site-data.js` for academic content and research summaries, `site-content.js` for shared rendering, and `styles.css` for presentation. Page-specific content and technical skills live in the HTML files. Run `node scripts/sync-content.mjs` after edits to refresh searchable static HTML on all four pages. No package installation or build step is needed. `app.js` handles the menu, figure viewer, publication filter, and CV print button.
 
-[Official GitHub Pages instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+## Publish
 
-The relative asset URLs also work if the site is published inside a project repository.
+The existing repository is [YaqingShen/yaqingshen.github.io](https://github.com/YaqingShen/yaqingshen.github.io). GitHub Pages serves `main` at its root. Upload the four HTML pages, `styles.css`, `site-data.js`, `site-content.js`, `app.js`, `.nojekyll`, `assets/`, and optional `scripts/` and README. Keep `.preview/` private and exclude it from uploads.
 
-## Update your content
+Live site: https://yaqingshen.github.io/
 
-Edit **site-data.js**. It contains the biography, academic background, email, profile links, research descriptions, awards, and publication records. Add publications to the `publications` array; set `firstAuthor: true` when appropriate. Use an empty string to hide an optional profile link.
-
-`cv.html` is a curated public research CV, with a **Print / Save as PDF** button. It shares biography, academic, award, and publication data with the homepage. Its technical skills section is in `cv.html`.
-
-The original application CV has not been copied into the website. The web CV uses the current CMU email and affiliation and excludes birth details, an old postal address, and the old telephone number.
-
-Core academic content is also pre-rendered into HTML for search engines and browsers without JavaScript. After content edits, optionally run `node scripts/sync-content.mjs` to update that static fallback. Normal browser content updates directly from `site-data.js`.
-
-Colors, typography, spacing, and responsive breakpoints are in **styles.css**. Shared HTML rendering is in **site-content.js**. **app.js** adds the mobile menu, publication filter, and accessible figure viewer. Font loading uses Google Fonts, with local system fallbacks. Content remains available without JavaScript. The light layout is fixed and does not use the previous theme preference.
+The web CV is curated for public use. The original application CV, including private birth details and old contact information, is not included.
 
 ## Content provenance
 
@@ -52,12 +42,13 @@ Checked in October 2026. Publisher metadata resolves differences in the older CV
 
 ## Images and figure provenance
 
-The headshot (`assets/yaqing-shen.jpg`) was supplied by Yaqing Shen for this website and is used without retouching. The white background and figure-led research presentation follow the user’s design preference, with [LanzaLab](https://lanzalab.org/) as a visual reference.
+The headshot (`assets/yaqing-shen.jpg`) was supplied by Yaqing Shen for this website and is used without retouching. The current design combines the banner and page structure of [Andriy Zakutayev](https://www.andriyzakutayev.com/) with the project-card presentation of [Adrian Chmielewski](https://adrian-chmielewski.com/), as requested by the user.
 
-Research images are figure excerpts rendered directly from the published PDFs, with the scientific panels and labels preserved. Each image links to its original source and opens in a larger viewer.
+Research images are sourced from published PDFs or the publisher’s public figure image, with the scientific panels and labels preserved. Research-card abstracts are concise paraphrases, labelled as summaries; original abstracts are available via the paper links. Each image links to its original source and opens in a larger viewer.
 
 - `assets/gate-transistors.png`: Figure 6, Shen et al., *Nature Electronics* (2024), [DOI](https://doi.org/10.1038/s41928-024-01233-w).
 - `assets/memristor-defects.png`: Figure 1, Shen et al., *Advanced Materials* (2021), [DOI](https://doi.org/10.1002/adma.202103656).
-- `assets/chip-integration.png`: Figure 5, Shen et al., *Nature Electronics* (2024), [DOI](https://doi.org/10.1038/s41928-024-01233-w). The image illustrates the 2024 embedded device structures; the accompanying research description also links to later collaborative integration work.
+- `assets/hybrid-cmos.png`: Figure 1, Zhu et al., *Nature* 618, 57–62 (2023), [DOI](https://doi.org/10.1038/s41586-023-05973-1). Downloaded unchanged from the publisher’s public figure image. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); displayed at a smaller size without cropping.
+- `assets/chip-integration.png`: retained from the previous design; no longer displayed. Figure 5, Shen et al., *Nature Electronics* (2024).
 
 Figures retain their original authors’ and publishers’ rights.
