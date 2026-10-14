@@ -38,7 +38,7 @@ window.SITE_DATA = {
     },
     {
       "years": "2022–2025",
-      "institution": "KAUST",
+      "institution": "King Abdullah University of Science and Technology (KAUST)",
       "degree": "Ph.D. · Materials Science & Engineering"
     },
     {

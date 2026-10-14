@@ -37,8 +37,8 @@
 
 .editorial-entry{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:36px;align-items:start;font-size:14px;color:var(--muted)}.editorial-entry strong{font-weight:500;color:var(--text)}.editorial-copy>a{display:inline-block;margin-top:6px}.editorial-note{font-size:12px;margin-top:3px}.editorial-flyer img{width:100%;height:auto;border:1px solid var(--line);box-shadow:0 4px 18px #24394e0a}.editorial-flyer figcaption{margin-top:8px;font-size:12px}.cv-download{white-space:nowrap}
 @media(max-width:720px){.editorial-entry{grid-template-columns:1fr;gap:24px}.editorial-flyer{width:min(100%,300px)}}
-.editorial-resources{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:22px;font-size:13px}.editorial-deadline{margin-top:22px;font-size:12px}
-@media print{.editorial-flyer,.editorial-resources{display:none}.editorial-entry{display:block}}
+.editorial-deadline{margin-top:22px;font-size:12px}
+@media print{.editorial-flyer{display:none}.editorial-entry{display:block}}
 @media print{.editorial-entry{font-size:9pt}.editorial-note{font-size:8pt}}
 
 .profile-brand-researchgate{color:#008c85}

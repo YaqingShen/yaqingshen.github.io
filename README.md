@@ -77,8 +77,10 @@ Advisor names link to the [Zhang Lab website](https://sites.google.com/view/zhan
 
 The homepage title is “Materials to Devices,” with the subtitle “Two-dimensional materials · Nanoelectronics · Integrated systems.”
 
-Shared JavaScript and CSS references carry a version query (`v=20261014-mobile1`) so browser caches refresh together after publication. Update this version on all four pages when changing shared assets.
+Shared JavaScript and CSS references carry a version query (`v=20261014-cv2`) so browser caches refresh together after publication. Update this version on all four pages when changing shared assets.
 
 The web CV hides the 2020, 2019, 2017, and 2016 awards and does not repeat the selected-publications list. The downloadable CV keeps all eight awards and seven selected publications. `showOnWeb` controls award visibility independently of the PDF. The special-issue flyer, editor certificate, and vertical banner were supplied by Yaqing Shen. The website copies of the flyer and banner have their deadline updated to 19 March 2027, as verified on MDPI on 14 October 2026. The flyer PNG is rendered from the updated PDF; the certificate is unchanged. The user’s original files are preserved.
 
 The title-banner image scales with the actual banner height so wrapped headings and subtitles on narrow screens cannot expose a solid strip at the bottom.
+
+The editorial section shows the flyer preview, View flyer link, and current deadline. The separate Download flyer, Editor certificate, and Announcement banner links were removed at the user’s request.
