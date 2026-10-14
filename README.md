@@ -5,17 +5,17 @@ A buildless website for GitHub Pages, combining a wide blue-gray title banner an
 ## Pages
 
 - `index.html`: headshot, biography, and three research cards with figures, journal names, dates, short abstract summaries, and paper links.
-- `cv.html`: printable research CV, academic history, awards, skills, journal peer-review service, and selected publications.
-- `publications.html`: six selected papers with a first-author filter and a link to the full Google Scholar record.
-- `contacts.html`: current professional email and Google Scholar, ORCID, LinkedIn, and GitHub links with icons.
+- `cv.html`: research CV with a direct PDF download, academic history, eight awards, skills, peer-review service, editorial experience, and selected publications.
+- `publications.html`: seven selected papers with a first-author filter and a link to the full Google Scholar record.
+- `contacts.html`: current professional email and Google Scholar, ORCID, LinkedIn, GitHub, and ResearchGate links with unboxed icons.
 
-All four pages share the banner, navigation, and footer. The portrait has rounded corners. Visible email addresses use `[at]` and `[dot]`, with functional mail links. The banner uses the user-supplied TEM image, rotated 8 degrees clockwise and cropped to the layered region through CSS. A dark overlay keeps the white navigation and title readable. The navigation remains fixed while scrolling; the larger title band scrolls with the page. Mobile navigation uses a Menu button. Figures open in a keyboard-accessible viewer.
+All four pages share the banner, navigation, and footer. The portrait has rounded corners. Visible email addresses use `[at]` and `[dot]`, with functional mail links. The banner uses the user-supplied TEM image, rotated 8 degrees clockwise and cropped to the layered region through CSS. A dark overlay keeps the white navigation and title readable. The navigation remains fixed while scrolling; the larger title band scrolls with the page. Mobile navigation uses a plain Menu button and a dropdown with the same rotated TEM image and dark overlay as the banner. Figures open in a keyboard-accessible viewer.
 
 ## Preview and update
 
 Run `python3 -m http.server 4173 --bind 127.0.0.1`, then open http://127.0.0.1:4173/.
 
-Edit `site-data.js` for academic content and research summaries, `site-content.js` for shared rendering, and `styles.css` for presentation. Page-specific content and technical skills live in the HTML files. Run `node scripts/sync-content.mjs` after edits to refresh searchable static HTML on all four pages. No package installation or build step is needed. `app.js` handles the menu, figure viewer, publication filter, and CV print button.
+Edit `site-data.js` for academic content and research summaries, `site-content.js` for shared rendering, and `styles.css` for presentation. Page-specific content and technical skills live in the HTML files. Run `node scripts/sync-content.mjs` after edits to refresh searchable static HTML on all four pages. No package installation or build step is needed. `app.js` handles the menu, figure viewer, and publication filter.
 
 ## Publish
 
@@ -55,12 +55,22 @@ Figures retain their original authors’ and publishers’ rights.
 
 ## Latest content choices
 
-The homepage features first-author work in Nature Electronics (2024), ACS Nano (2025), and Advanced Materials (2021). The Nature (2023) paper remains in the selected publication list, but its homepage card has been replaced as requested. The user selected Nature Electronics Fig. 4d (atomistic schematic) and the top schematic of Advanced Materials Fig. 5. Clicking the Advanced Materials image opens the complete Fig. 5, including microscopy panels.
+The homepage features first-author work in this order: ACS Nano (2025), Nature Electronics (2024), and Advanced Materials (2021). The Nature (2023) paper remains in the selected publication list, but its homepage card has been replaced as requested. The user selected Nature Electronics Fig. 4d (atomistic schematic) and the complete Advanced Materials Fig. 5, including microscopy panels, for both the card and enlarged viewer.
 
 `assets/acs-nano-device.png` is a PNG conversion of `4layershBNFET7.tif`, the device rendering supplied by Yaqing Shen specifically for the ACS Nano card. The rendering and aspect ratio are unchanged; it is credited as a device illustration. The project summary follows the published abstract.
 
-Journal peer-review service includes Science, Materials Science & Engineering: R: Reports, and Advanced Functional Materials as confirmed by the user, and Microelectronic Engineering as recorded in the supplied CV. No review counts or ongoing service dates are inferred.
+Journal peer-review service includes Science, Materials Science & Engineering: R: Reports, Advanced Functional Materials, Applied Physics Letters, and Communications Engineering as confirmed by the user, and Microelectronic Engineering as recorded in the supplied CV. No review counts or ongoing service dates are inferred.
 
 The banner asset (`assets/tem-banner.jpg`) is a web-sized JPEG conversion of the user-supplied cropped PNG, derived from `Test3_0049 copy.tif`. Rotation and clipping are applied only in the page layout; the original image is unchanged. The upper and lower surroundings, including the scale bar, are excluded from this decorative banner crop. It is not presented as a quantitative research figure.
 
-Current figure assets: `assets/atomistic-breakdown.png` is Nature Electronics (2024), Fig. 4d. `assets/memristor-schematic.png` is the top of Advanced Materials (2021), Fig. 5, and `assets/memristor-figure5.png` retains the complete figure for the enlarged viewer. These selections were confirmed by the user. They are faithful PDF figure excerpts, without redrawing or modification of scientific content.
+Current figure assets: `assets/atomistic-breakdown.png` is Nature Electronics (2024), Fig. 4d. `assets/memristor-schematic.png` is an unused earlier excerpt. `assets/memristor-figure5.png` retains the complete Advanced Materials (2021), Fig. 5 for the card and enlarged viewer. These selections were confirmed by the user. They are faithful PDF figure excerpts, without redrawing or modification of scientific content.
+
+## Public CV and additional records
+
+`assets/Yaqing-Shen-CV.pdf` is a two-page public CV generated from website content. The Download CV link downloads it directly and also works without JavaScript. Run `python3 scripts/build-cv.py` to regenerate it after data changes (requires ReportLab and the system Arial font family on macOS). The original application CV remains private.
+
+All eight awards were transcribed from the supplied CV, including the 2021 National Scholarship from the Ministry of Education, China. The [2025 Nature paper](https://doi.org/10.1038/s41586-025-08742-4) was added to the shared publication list; both verified Nature Electronics papers remain included.
+
+Editorial experience: Guest Editor, Materials (MDPI), [Advances in 2D Material-Based Electronic Devices](https://www.mdpi.com/journal/materials/special_issues/GEVN3HOMJ9), verified on the publisher's page. No service dates are inferred. ResearchGate uses the scientific-contributions profile supplied directly by the user.
+
+Advisor names link to the [Zhang Lab website](https://sites.google.com/view/zhanglab-cmu/home), as linked from the official CMU faculty directory, and [Lanza Lab](https://lanzalab.org/). The links also appear in the downloadable CV.

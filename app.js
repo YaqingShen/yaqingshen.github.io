@@ -2,14 +2,13 @@
   'use strict';
   const data = window.SITE_DATA, content = window.SITE_CONTENT;
   if (!data || !content) return;
-  const regions = {'work-grid':'research','publication-list':'publications','academic-timeline':'timeline','awards-list':'awards','reviewer-list':'reviewers','about-paragraphs':'about','interest-list':'interests'};
+  const regions = {'work-grid':'research','publication-list':'publications','academic-timeline':'timeline','awards-list':'awards','reviewer-list':'reviewers','editorial-list':'editorial','about-paragraphs':'about','interest-list':'interests'};
   Object.entries(regions).forEach(([id, key]) => { const el = document.getElementById(id); if(el) el.innerHTML = content[key]; });
   const profiles = document.getElementById('profile-links');
   if(profiles) profiles.innerHTML = content.profiles(document.body.dataset.page === 'cv');
   const year = document.getElementById('copyright-year');
   if(year) year.textContent = new Date().getFullYear();
   const menu = document.querySelector('.menu-toggle'), nav = document.getElementById('main-nav');
-  document.querySelector('.print-button')?.addEventListener('click', () => window.print());
   const closeMenu = () => { menu?.setAttribute('aria-expanded','false'); nav?.classList.remove('is-open'); };
   menu?.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded',String(open)); nav.classList.toggle('is-open',open); });
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click',closeMenu));
