@@ -1,6 +1,6 @@
 /* Edit biography, profile links, research, and publications here.
    Empty links are hidden. Citations checked in October 2026.
-   All illustrations are abstract artwork, not experimental figures. */
+   Figure excerpts are credited to their original papers. */
 window.SITE_DATA = {
   name: "Yaqing Shen",
   title: "Yaqing Shen — Materials Science & Nanoelectronics",
@@ -30,24 +30,24 @@ window.SITE_DATA = {
   ],
   projects: [
     {
-      id: "gate-stacks", title: "Engineering the gate stack", category: "2D transistors", year: "01 / MATERIALS",
+      id: "gate-stacks", title: "2D transistors & gate dielectrics", category: "2D transistors", year: "01 / MATERIALS",
       summary: "Exploring hBN dielectrics and metal electrodes for reliable, low-voltage two-dimensional transistors.",
-      description: "How can a layered dielectric become a practical part of a transistor? My first-author work investigates how electrode materials influence leakage and dielectric reliability in hBN gate stacks, and explores MoS₂ transistors with ultrathin hBN dielectrics. These studies connect materials choices with device-level electrical performance.",
-      tags: ["hBN", "MoS₂", "Gate dielectrics"], artwork: "layers",
+      description: "I study how metal electrodes and ultrathin hBN dielectrics influence leakage, reliability, and the electrical performance of MoS₂ transistors. My work connects materials selection with the design of low-voltage electronic devices.",
+      tags: ["hBN", "MoS₂", "Gate dielectrics"], image: "./assets/gate-transistors.png", imageAlt: "Microscopy and electrical characteristics of MoS₂ transistors with Pt/hBN gate stacks", figureCredit: "Shen et al. · Nature Electronics (2024), Fig. 6", figureUrl: "https://doi.org/10.1038/s41928-024-01233-w",
       url: "https://doi.org/10.1038/s41928-024-01233-w", linkLabel: "Read the Nature Electronics paper"
     },
     {
-      id: "memristors", title: "Understanding the imperfections", category: "Memristors & reliability", year: "02 / DEVICES",
+      id: "memristors", title: "Memristors & material defects", category: "Memristors & reliability", year: "02 / DEVICES",
       summary: "Studying defects, variability, and resistive switching in two-dimensional materials-based memristors.",
-      description: "Real materials contain imperfections. My research examines how different defects in hBN influence electrical behaviour, variability, and circuit yield. A first-author study in Advanced Materials investigates why out-of-plane memristive devices can respond differently to local defects than in-plane electronic devices.",
-      tags: ["Defect engineering", "Memristors", "Characterization"], artwork: "lattice",
+      description: "I investigate how defects in hBN affect resistive switching, device variability, and circuit yield. By combining microscopy with electrical measurements, I connect local material structure with the behaviour of memristive devices.",
+      tags: ["Defect engineering", "Memristors", "Characterization"], image: "./assets/memristor-defects.png", imageAlt: "Optical micrographs and current–voltage curves of monolayer and multilayer hBN memristors", figureCredit: "Shen et al. · Advanced Materials (2021), Fig. 1", figureUrl: "https://doi.org/10.1002/adma.202103656",
       url: "https://doi.org/10.1002/adma.202103656", linkLabel: "Read the Advanced Materials paper"
     },
     {
-      id: "integration", title: "Connecting materials to microchips", category: "Circuits & integration", year: "03 / SYSTEMS",
+      id: "integration", title: "From 2D materials to microchips", category: "Circuits & integration", year: "03 / SYSTEMS",
       summary: "Bringing layered materials into CMOS and radiofrequency platforms through collaborative research.",
-      description: "Taking a material beyond an isolated device requires integration with working circuits. My collaborative publications include hybrid 2D–CMOS microchips, hBN memristive circuits for millimetre-wave applications, and reconfigurable GaN microchips with integrated hBN switches. Together, these studies explore routes from nanoscale materials to circuit functions.",
-      tags: ["CMOS integration", "RF switches", "hBN / GaN"], artwork: "circuit",
+      description: "My research explores the integration of hBN into working microchips. Collaborative studies extend this work to hybrid 2D–CMOS circuits, millimetre-wave memristive circuits, and reconfigurable GaN platforms with hBN switches.",
+      tags: ["CMOS integration", "RF switches", "hBN / GaN"], image: "./assets/chip-integration.png", imageAlt: "Microscopy and electrical measurements of hBN structures embedded in a microchip", figureCredit: "Shen et al. · Nature Electronics (2024), Fig. 5", figureUrl: "https://doi.org/10.1038/s41928-024-01233-w",
       url: "https://doi.org/10.1038/s41586-026-10761-8", linkLabel: "Read the Nature paper"
     }
   ],

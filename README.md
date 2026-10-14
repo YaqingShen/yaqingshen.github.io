@@ -1,6 +1,6 @@
 # Yaqing Shen — Personal academic website
 
-A lightweight academic portfolio built for GitHub Pages. Dark and light themes, original animated artwork, three research directions, six selected papers with a first-author filter, academic background, profile links, and a printable research CV.
+A lightweight academic portfolio built for GitHub Pages. A white, research-focused layout with a personal headshot, figures from published papers, three research directions, six selected papers with a first-author filter, academic background, profile links, and a printable research CV.
 
 ## Preview locally
 
@@ -15,7 +15,7 @@ Open [http://127.0.0.1:4173](http://127.0.0.1:4173). No installation or framewor
 ## Publish on GitHub Pages
 
 1. Create a public repository named **yaqingshen.github.io** under the **YaqingShen** account, or use the existing repository if it already exists.
-2. Put `index.html`, `cv.html`, `styles.css`, `site-data.js`, `app.js`, `assets/`, and `.nojekyll` in the root of the `main` branch. The README and optional `scripts/` can be included too. Keep `.preview/` out of Git.
+2. Put `index.html`, `cv.html`, `styles.css`, `site-data.js`, `site-content.js`, `app.js`, `assets/`, and `.nojekyll` in the root of the `main` branch. The README and optional `scripts/` can be included too. Keep `.preview/` out of Git.
 3. In **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/ (root)**, and save.
 4. Once GitHub finishes publishing, use **Visit site** in Pages settings. The intended address is `https://yaqingshen.github.io/`.
 
@@ -33,7 +33,7 @@ The original application CV has not been copied into the website. The web CV use
 
 Core academic content is also pre-rendered into HTML for search engines and browsers without JavaScript. After content edits, optionally run `node scripts/sync-content.mjs` to update that static fallback. Normal browser content updates directly from `site-data.js`.
 
-Colors, typography, spacing, and responsive breakpoints are in **styles.css**. The original SVG research illustrations and canvas animation are in **app.js**. These are illustrative artwork, not experimental data or atomic models. Motion can be paused and respects the reduced-motion setting. Animation stops while outside the viewport or in a background tab. Font loading uses Google Fonts, with local system fallbacks.
+Colors, typography, spacing, and responsive breakpoints are in **styles.css**. Shared HTML rendering is in **site-content.js**. **app.js** adds the mobile menu, publication filter, and accessible figure viewer. Font loading uses Google Fonts, with local system fallbacks. Content remains available without JavaScript. The light layout is fixed and does not use the previous theme preference.
 
 ## Content provenance
 
@@ -49,3 +49,15 @@ Selected paper links and metadata:
 - [Advanced Materials, 2021 — Variability and Yield in h-BN-Based Memristive Circuits: The Role of Each Type of Defect](https://doi.org/10.1002/adma.202103656)
 
 Checked in October 2026. Publisher metadata resolves differences in the older CV: the ACS Nano paper uses **4 nm**, and the radiofrequency paper title follows the publisher’s wording. This is a selected portfolio, not an exhaustive publication list. Google Scholar is linked for the complete record.
+
+## Images and figure provenance
+
+The headshot (`assets/yaqing-shen.jpg`) was supplied by Yaqing Shen for this website and is used without retouching. The white background and figure-led research presentation follow the user’s design preference, with [LanzaLab](https://lanzalab.org/) as a visual reference.
+
+Research images are figure excerpts rendered directly from the published PDFs, with the scientific panels and labels preserved. Each image links to its original source and opens in a larger viewer.
+
+- `assets/gate-transistors.png`: Figure 6, Shen et al., *Nature Electronics* (2024), [DOI](https://doi.org/10.1038/s41928-024-01233-w).
+- `assets/memristor-defects.png`: Figure 1, Shen et al., *Advanced Materials* (2021), [DOI](https://doi.org/10.1002/adma.202103656).
+- `assets/chip-integration.png`: Figure 5, Shen et al., *Nature Electronics* (2024), [DOI](https://doi.org/10.1038/s41928-024-01233-w). The image illustrates the 2024 embedded device structures; the accompanying research description also links to later collaborative integration work.
+
+Figures retain their original authors’ and publishers’ rights.
