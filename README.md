@@ -9,7 +9,7 @@ A buildless website for GitHub Pages, combining a wide blue-gray title banner an
 - `publications.html`: seven selected papers with a first-author filter and a link to the full Google Scholar record.
 - `contacts.html`: current professional email and Google Scholar, ORCID, LinkedIn, GitHub, and ResearchGate links with unboxed icons.
 
-All four pages share the banner, navigation, and footer. The portrait has rounded corners. Visible email addresses use `[at]` and `[dot]`, with functional mail links. The banner uses the user-supplied TEM image, rotated 8 degrees clockwise and cropped to the layered region through CSS. A dark overlay keeps the white navigation and title readable. The navigation remains fixed while scrolling; the larger title band scrolls with the page. Mobile navigation uses a plain Menu button and a dropdown with the same rotated TEM image and dark overlay as the banner. Figures open in a keyboard-accessible viewer.
+All four pages share the banner, navigation, and footer. The portrait has rounded corners. Visible email addresses use `[at]` and `[dot]`, with functional mail links. The banner uses the latest user-supplied horizontal TEM image without rotation. A dark overlay keeps the white navigation and title readable. The navigation remains fixed while scrolling; the larger title band scrolls with the page. Mobile navigation uses a plain Menu button and a dropdown with the same horizontal TEM image and dark overlay as the banner. Figures open in a keyboard-accessible viewer.
 
 ## Preview and update
 
@@ -61,7 +61,7 @@ The homepage features first-author work in this order: ACS Nano (2025), Nature E
 
 Journal peer-review service includes Science, Materials Science & Engineering: R: Reports, Advanced Functional Materials, Applied Physics Letters, and Communications Engineering as confirmed by the user, and Microelectronic Engineering as recorded in the supplied CV. No review counts or ongoing service dates are inferred.
 
-The banner asset (`assets/tem-banner.jpg`) is a web-sized JPEG conversion of the user-supplied cropped PNG, derived from `Test3_0049 copy.tif`. Rotation and clipping are applied only in the page layout; the original image is unchanged. The upper and lower surroundings, including the scale bar, are excluded from this decorative banner crop. It is not presented as a quantitative research figure.
+The banner asset (`assets/hbn-banner.png`) is the user's latest horizontal, pre-cropped PNG, copied unchanged. CSS uses centered cover sizing with no rotation; a dark overlay supports readable titles and navigation. It is a decorative banner, not a quantitative research figure.
 
 Current figure assets: `assets/atomistic-breakdown.png` is Nature Electronics (2024), Fig. 4d. `assets/memristor-schematic.png` is an unused earlier excerpt. `assets/memristor-figure5.png` retains the complete Advanced Materials (2021), Fig. 5 for the card and enlarged viewer. These selections were confirmed by the user. They are faithful PDF figure excerpts, without redrawing or modification of scientific content.
 
@@ -74,3 +74,7 @@ All eight awards were transcribed from the supplied CV, including the 2021 Natio
 Editorial experience: Guest Editor, Materials (MDPI), [Advances in 2D Material-Based Electronic Devices](https://www.mdpi.com/journal/materials/special_issues/GEVN3HOMJ9), verified on the publisher's page. No service dates are inferred. ResearchGate uses the scientific-contributions profile supplied directly by the user.
 
 Advisor names link to the [Zhang Lab website](https://sites.google.com/view/zhanglab-cmu/home), as linked from the official CMU faculty directory, and [Lanza Lab](https://lanzalab.org/). The links also appear in the downloadable CV.
+
+The homepage title is “Materials to Devices,” with the subtitle “Two-dimensional materials · Nanoelectronics · Integrated systems.”
+
+Shared JavaScript and CSS references carry a version query (`v=20261013-final`) so browser caches refresh together after publication. Update this version on all four pages when changing shared assets.

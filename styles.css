@@ -13,11 +13,11 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media print{body{padding:0;color:#111;font-size:10pt}.site-header,.page-banner,.site-footer,.skip-link,.cv-download,.interest-list,.publication-arrow,.author-badge{display:none}.container,.cv-page{width:100%;max-width:none;padding:0}.cv-overview{margin-bottom:20px}.cv-overview h2{font-size:24pt}.cv-overview p,.cv-overview a{font-size:10pt}.cv-section{margin-top:18px;padding-top:14px}.cv-section>h2{font-size:13pt;margin-bottom:10px}.cv-section #about-paragraphs p{font-size:9pt;line-height:1.5}.timeline-row{padding:7px 0;grid-template-columns:85px 1fr;break-inside:avoid}.timeline-row strong{font-size:10pt}.timeline-row span,.timeline-row div>span{font-size:9pt}.skills>div{font-size:9pt;margin-bottom:8px;break-inside:avoid}.cv-page .publication{grid-template-columns:38px 1fr;padding:11px 0;break-inside:avoid}.cv-page .publication h3{font-size:10pt}.publication-meta,.cv-page .publication-content>p{font-size:8pt}.cv-foot,.cv-scholar{font-size:8pt}.cv-section>h2{break-after:avoid}@page{size:A4;margin:17mm}}
 
-/* The source micrograph is rotated and clipped in CSS, preserving its content. */
-:root{--banner-image:url('./assets/tem-banner.jpg');--banner-height:234px;--banner-rotation:8deg}
+/* User-supplied horizontal micrograph, aligned across the banner and navigation. */
+:root{--banner-image:url('./assets/hbn-banner.png');--banner-height:234px;--banner-rotation:0deg}
 .page-banner{position:relative;isolation:isolate;min-height:var(--banner-height)}
 .banner-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.banner-art:before{content:'';position:absolute;left:50%;top:calc((var(--banner-height) - var(--header-height))/2);width:115%;min-width:1600px;aspect-ratio:4092/2026;background-image:var(--banner-image);background-size:100% 100%;transform:translate(-50%,-50%) rotate(var(--banner-rotation));transform-origin:center}
+.banner-art:before{content:'';position:absolute;left:50%;top:calc((var(--banner-height) - var(--header-height))/2);width:100%;height:calc(var(--banner-height) + var(--header-height));background-image:var(--banner-image);background-size:cover;background-position:center;transform:translate(-50%,-50%) rotate(var(--banner-rotation));transform-origin:center}
 .banner-art:after{content:'';position:absolute;inset:0;background:rgba(20,32,46,.56)}
 .site-header .banner-art:before{top:calc((var(--banner-height) + var(--header-height))/2)}
 .site-header .banner-art:after{background:rgba(20,32,46,.74)}
@@ -41,6 +41,6 @@
 /* Match the expanded mobile navigation to the TEM title banner. */
 @media(max-width:720px){
  #main-nav{isolation:isolate;overflow:hidden}
- #main-nav:before{content:'';position:absolute;z-index:-2;left:50%;top:calc((var(--banner-height) - var(--header-height))/2);width:115%;min-width:1600px;aspect-ratio:4092/2026;background-image:var(--banner-image);background-size:100% 100%;transform:translate(-50%,-50%) rotate(var(--banner-rotation));transform-origin:center;pointer-events:none}
+ #main-nav:before{content:'';position:absolute;z-index:-2;left:50%;top:calc((var(--banner-height) - var(--header-height))/2);width:100%;height:calc(var(--banner-height) + var(--header-height));background-image:var(--banner-image);background-size:cover;background-position:center;transform:translate(-50%,-50%) rotate(var(--banner-rotation));transform-origin:center;pointer-events:none}
  #main-nav:after{content:'';position:absolute;inset:0;z-index:-1;background:rgba(20,32,46,.74);pointer-events:none}
 }
