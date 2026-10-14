@@ -5,11 +5,11 @@ A buildless website for GitHub Pages, combining a wide blue-gray title banner an
 ## Pages
 
 - `index.html`: headshot, biography, and three research cards with figures, journal names, dates, short abstract summaries, and paper links.
-- `cv.html`: printable research CV, academic history, awards, skills, and selected publications.
+- `cv.html`: printable research CV, academic history, awards, skills, journal peer-review service, and selected publications.
 - `publications.html`: six selected papers with a first-author filter and a link to the full Google Scholar record.
-- `contacts.html`: current professional email and Google Scholar, ORCID, LinkedIn, and GitHub links.
+- `contacts.html`: current professional email and Google Scholar, ORCID, LinkedIn, and GitHub links with icons.
 
-All four pages share the banner, navigation, and footer. The navigation remains fixed while scrolling; the larger title band scrolls with the page. Mobile navigation uses a Menu button. Figures open in a keyboard-accessible viewer.
+All four pages share the banner, navigation, and footer. The portrait has rounded corners. Visible email addresses use `[at]` and `[dot]`, with functional mail links. The banner uses the user-supplied TEM image, rotated 8 degrees clockwise and cropped to the layered region through CSS. A dark overlay keeps the white navigation and title readable. The navigation remains fixed while scrolling; the larger title band scrolls with the page. Mobile navigation uses a Menu button. Figures open in a keyboard-accessible viewer.
 
 ## Preview and update
 
@@ -48,7 +48,19 @@ Research images are sourced from published PDFs or the publisher’s public figu
 
 - `assets/gate-transistors.png`: Figure 6, Shen et al., *Nature Electronics* (2024), [DOI](https://doi.org/10.1038/s41928-024-01233-w).
 - `assets/memristor-defects.png`: Figure 1, Shen et al., *Advanced Materials* (2021), [DOI](https://doi.org/10.1002/adma.202103656).
-- `assets/hybrid-cmos.png`: Figure 1, Zhu et al., *Nature* 618, 57–62 (2023), [DOI](https://doi.org/10.1038/s41586-023-05973-1). Downloaded unchanged from the publisher’s public figure image. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); displayed at a smaller size without cropping.
+- `assets/hybrid-cmos.png`: retained from the previous design, no longer featured. Figure 1, Zhu et al., *Nature* 618, 57–62 (2023), [DOI](https://doi.org/10.1038/s41586-023-05973-1). Downloaded unchanged from the publisher’s public figure image. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); displayed at a smaller size without cropping.
 - `assets/chip-integration.png`: retained from the previous design; no longer displayed. Figure 5, Shen et al., *Nature Electronics* (2024).
 
 Figures retain their original authors’ and publishers’ rights.
+
+## Latest content choices
+
+The homepage features first-author work in Nature Electronics (2024), ACS Nano (2025), and Advanced Materials (2021). The Nature (2023) paper remains in the selected publication list, but its homepage card has been replaced as requested. The user selected Nature Electronics Fig. 4d (atomistic schematic) and the top schematic of Advanced Materials Fig. 5. Clicking the Advanced Materials image opens the complete Fig. 5, including microscopy panels.
+
+`assets/acs-nano-device.png` is a PNG conversion of `4layershBNFET7.tif`, the device rendering supplied by Yaqing Shen specifically for the ACS Nano card. The rendering and aspect ratio are unchanged; it is credited as a device illustration. The project summary follows the published abstract.
+
+Journal peer-review service includes Science, Materials Science & Engineering: R: Reports, and Advanced Functional Materials as confirmed by the user, and Microelectronic Engineering as recorded in the supplied CV. No review counts or ongoing service dates are inferred.
+
+The banner asset (`assets/tem-banner.jpg`) is a web-sized JPEG conversion of the user-supplied cropped PNG, derived from `Test3_0049 copy.tif`. Rotation and clipping are applied only in the page layout; the original image is unchanged. The upper and lower surroundings, including the scale bar, are excluded from this decorative banner crop. It is not presented as a quantitative research figure.
+
+Current figure assets: `assets/atomistic-breakdown.png` is Nature Electronics (2024), Fig. 4d. `assets/memristor-schematic.png` is the top of Advanced Materials (2021), Fig. 5, and `assets/memristor-figure5.png` retains the complete figure for the enlarged viewer. These selections were confirmed by the user. They are faithful PDF figure excerpts, without redrawing or modification of scientific content.

@@ -2,7 +2,7 @@
   'use strict';
   const data = window.SITE_DATA, content = window.SITE_CONTENT;
   if (!data || !content) return;
-  const regions = {'work-grid':'research','publication-list':'publications','academic-timeline':'timeline','awards-list':'awards','about-paragraphs':'about','interest-list':'interests'};
+  const regions = {'work-grid':'research','publication-list':'publications','academic-timeline':'timeline','awards-list':'awards','reviewer-list':'reviewers','about-paragraphs':'about','interest-list':'interests'};
   Object.entries(regions).forEach(([id, key]) => { const el = document.getElementById(id); if(el) el.innerHTML = content[key]; });
   const profiles = document.getElementById('profile-links');
   if(profiles) profiles.innerHTML = content.profiles(document.body.dataset.page === 'cv');
@@ -28,8 +28,8 @@
     e.preventDefault(); trigger=link;
     const p=data.projects[Number(link.dataset.figure)];
     document.getElementById('figure-dialog-title').textContent=p.title;
-    const img=document.getElementById('figure-dialog-image'); img.src=p.image; img.alt=p.imageAlt;
-    const source=document.getElementById('figure-dialog-source'); source.href=p.figureUrl; source.textContent=p.figureCredit+' ↗';
+    const img=document.getElementById('figure-dialog-image'); img.src=p.fullImage || p.image; img.alt=p.fullImageAlt || p.imageAlt;
+    const source=document.getElementById('figure-dialog-source'); source.href=p.figureUrl; source.textContent=(p.fullFigureCredit || p.figureCredit)+' ↗';
     dialog.showModal(); document.body.classList.add('dialog-open');
   }));
   dialog?.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
