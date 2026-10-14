@@ -26,6 +26,6 @@
     interests: d.interests.map(t=>`<span>${esc(t)}</span>`).join(''),
     reviewers: `<ul class="reviewer-journals">${d.reviewerJournals.map(j=>`<li>${esc(j)}</li>`).join('')}</ul>`,
     editorial: d.editorial.map(e=>`<div class="editorial-entry"><p><strong>${esc(e.role)}</strong> · ${esc(e.journal)}</p><a href="${safe(e.url)}"${external}>${esc(e.title)}</a><p class="editorial-note">Special issue</p></div>`).join(''),
-    profiles: () => [['Google Scholar',d.scholar,'Publications & citations','scholar'],['ORCID',d.orcid,'0000-0002-2325-5618','orcid'],['LinkedIn',d.linkedin,'Professional profile','linkedin'],['GitHub',d.github,'Code & projects','github'],['ResearchGate',d.researchgate,'Research & publications','researchgate']].filter(([,url])=>safe(url)).map(([label,url,note,key])=>`<a href="${safe(url)}"${external}>${profileIcon(key)}<span class="profile-label"><strong>${esc(label)}</strong><small>${esc(note)}</small></span>${icon}</a>`).join('')
+    profiles: () => [['Google Scholar',d.scholar,'Publications & citations','scholar'],['ORCID',d.orcid,'0000-0002-2325-5618','orcid'],['LinkedIn',d.linkedin,'Professional profile','linkedin'],['ResearchGate',d.researchgate,'Research & publications','researchgate']].filter(([,url])=>safe(url)).map(([label,url,note,key])=>`<a href="${safe(url)}"${external}>${profileIcon(key)}<span class="profile-label"><strong>${esc(label)}</strong><small>${esc(note)}</small></span>${icon}</a>`).join('')
   };
 })();

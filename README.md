@@ -7,7 +7,7 @@ A buildless website for GitHub Pages, combining a wide blue-gray title banner an
 - `index.html`: headshot, biography, and three research cards with figures, journal names, dates, short abstract summaries, and paper links.
 - `cv.html`: research CV with a direct PDF download, academic history, eight awards, skills, peer-review service, editorial experience, and selected publications.
 - `publications.html`: seven selected papers with a first-author filter and a link to the full Google Scholar record.
-- `contacts.html`: current professional email and Google Scholar, ORCID, LinkedIn, GitHub, and ResearchGate links with unboxed icons.
+- `contacts.html`: current professional email and Google Scholar, ORCID, LinkedIn, and ResearchGate links with unboxed icons.
 
 All four pages share the banner, navigation, and footer. The portrait has rounded corners. Visible email addresses use `[at]` and `[dot]`, with functional mail links. The banner uses the latest user-supplied horizontal TEM image without rotation. A dark overlay keeps the white navigation and title readable. The navigation remains fixed while scrolling; the larger title band scrolls with the page. Mobile navigation uses a plain Menu button and a dropdown with the same horizontal TEM image and dark overlay as the banner. Figures open in a keyboard-accessible viewer.
 
@@ -77,4 +77,4 @@ Advisor names link to the [Zhang Lab website](https://sites.google.com/view/zhan
 
 The homepage title is “Materials to Devices,” with the subtitle “Two-dimensional materials · Nanoelectronics · Integrated systems.”
 
-Shared JavaScript and CSS references carry a version query (`v=20261013-final2`) so browser caches refresh together after publication. Update this version on all four pages when changing shared assets.
+Shared JavaScript and CSS references carry a version query (`v=20261013-final3`) so browser caches refresh together after publication. Update this version on all four pages when changing shared assets.
