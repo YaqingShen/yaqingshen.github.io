@@ -1,23 +1,19 @@
-// Refresh searchable static HTML after changing site-data.js or site-content.js.
-import { readFile, writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+// Refresh static HTML after changing shared data or rendering.
+import {readFile,writeFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import vm from 'node:vm';
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const context = { window: {}, URL };
-for (const file of ['site-data.js','site-content.js']) vm.runInNewContext(await readFile(path.join(root,file),'utf8'),context);
-const content = context.window.SITE_CONTENT;
-function region(html,name,markup){
-  const start=`<!-- STATIC:${name}:START -->`,end=`<!-- STATIC:${name}:END -->`;
-  const from=html.indexOf(start),to=html.indexOf(end,from);
-  if(from<0||to<0)throw new Error(`Missing region: ${name}`);
-  return html.slice(0,from+start.length)+markup+html.slice(to);
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const context={window:{},URL};
+for(const file of ['site-data.js','site-content.js']) vm.runInNewContext(await readFile(path.join(root,file),'utf8'),context);
+const content=context.window.SITE_CONTENT;
+for(const [file,page] of [['index.html','home'],['cv.html','cv'],['publications.html','publications'],['contacts.html','contacts']]) {
+  const html=await readFile(path.join(root,file),'utf8');
+  const updated=html.replace(/<!-- STATIC:([A-Z]+):START -->[\s\S]*?<!-- STATIC:\1:END -->/g,(_,name)=>{
+    const value=content[name.toLowerCase()];
+    if(value===undefined) throw new Error(`Unknown region ${name} in ${file}`);
+    return `<!-- STATIC:${name}:START -->${typeof value==='function'?value(page):value}<!-- STATIC:${name}:END -->`;
+  });
+  await writeFile(path.join(root,file),updated);
 }
-for(const filename of ['index.html','cv.html']){
-  let html=await readFile(path.join(root,filename),'utf8');
-  for(const name of ['PUBLICATIONS','TIMELINE','ABOUT'])html=region(html,name,content[name.toLowerCase()]);
-  html=region(html,'PROFILES',content.profiles(filename==='cv.html'));
-  if(filename==='index.html')for(const name of ['RESEARCH','INTERESTS'])html=region(html,name,content[name.toLowerCase()]);
-  await writeFile(path.join(root,filename),html);
-}
-console.log('Updated static content in index.html and cv.html.');
+console.log('Updated all four pages.');
