@@ -77,4 +77,4 @@ Advisor names link to the [Zhang Lab website](https://sites.google.com/view/zhan
 
 The homepage title is “Materials to Devices,” with the subtitle “Two-dimensional materials · Nanoelectronics · Integrated systems.”
 
-Shared JavaScript and CSS references carry a version query (`v=20261013-final`) so browser caches refresh together after publication. Update this version on all four pages when changing shared assets.
+Shared JavaScript and CSS references carry a version query (`v=20261013-final2`) so browser caches refresh together after publication. Update this version on all four pages when changing shared assets.

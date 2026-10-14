@@ -41,6 +41,6 @@
 /* Match the expanded mobile navigation to the TEM title banner. */
 @media(max-width:720px){
  #main-nav{isolation:isolate;overflow:hidden}
- #main-nav:before{content:'';position:absolute;z-index:-2;left:50%;top:calc((var(--banner-height) - var(--header-height))/2);width:100%;height:calc(var(--banner-height) + var(--header-height));background-image:var(--banner-image);background-size:cover;background-position:center;transform:translate(-50%,-50%) rotate(var(--banner-rotation));transform-origin:center;pointer-events:none}
+ #main-nav:before{content:'';position:absolute;z-index:-2;left:50%;top:calc((100% - var(--header-height))/2);width:100%;height:calc(100% + var(--header-height));background-image:var(--banner-image);background-size:cover;background-position:center;transform:translate(-50%,-50%) rotate(var(--banner-rotation));transform-origin:center;pointer-events:none}
  #main-nav:after{content:'';position:absolute;inset:0;z-index:-1;background:rgba(20,32,46,.74);pointer-events:none}
 }
