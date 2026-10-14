@@ -18,6 +18,8 @@
 .page-banner{position:relative;isolation:isolate;min-height:var(--banner-height)}
 .banner-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .banner-art:before{content:'';position:absolute;left:50%;top:calc((var(--banner-height) - var(--header-height))/2);width:100%;height:calc(var(--banner-height) + var(--header-height));background-image:var(--banner-image);background-size:cover;background-position:center;transform:translate(-50%,-50%) rotate(var(--banner-rotation));transform-origin:center}
+/* Wrapped titles can make the banner taller than its minimum height on phones. */
+.page-banner .banner-art:before{left:0;top:calc(-1 * var(--header-height));height:calc(100% + var(--header-height));transform:none}
 .banner-art:after{content:'';position:absolute;inset:0;background:rgba(20,32,46,.56)}
 .site-header .banner-art:before{top:calc((var(--banner-height) + var(--header-height))/2)}
 .site-header .banner-art:after{background:rgba(20,32,46,.74)}
@@ -33,7 +35,10 @@
 @media(max-width:720px){.reviewer-journals{grid-template-columns:1fr;gap:10px}.profile-links a{gap:13px}}
 @media print{.reviewer-journals{font-size:9pt;gap:7px 20px}}
 
-.editorial-entry{font-size:14px;color:var(--muted)}.editorial-entry strong{font-weight:500;color:var(--text)}.editorial-entry>a{display:inline-block;margin-top:6px}.editorial-note{font-size:12px;margin-top:3px}.cv-download{white-space:nowrap}
+.editorial-entry{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:36px;align-items:start;font-size:14px;color:var(--muted)}.editorial-entry strong{font-weight:500;color:var(--text)}.editorial-copy>a{display:inline-block;margin-top:6px}.editorial-note{font-size:12px;margin-top:3px}.editorial-flyer img{width:100%;height:auto;border:1px solid var(--line);box-shadow:0 4px 18px #24394e0a}.editorial-flyer figcaption{margin-top:8px;font-size:12px}.cv-download{white-space:nowrap}
+@media(max-width:720px){.editorial-entry{grid-template-columns:1fr;gap:24px}.editorial-flyer{width:min(100%,300px)}}
+.editorial-resources{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:22px;font-size:13px}.editorial-deadline{margin-top:22px;font-size:12px}
+@media print{.editorial-flyer,.editorial-resources{display:none}.editorial-entry{display:block}}
 @media print{.editorial-entry{font-size:9pt}.editorial-note{font-size:8pt}}
 
 .profile-brand-researchgate{color:#008c85}

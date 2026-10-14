@@ -199,22 +199,26 @@ window.SITE_DATA = {
     {
       "year": "2020",
       "title": "First Class Award Scholarship of the Graduate School",
-      "organization": "Soochow University"
+      "organization": "Soochow University",
+      "showOnWeb": false
     },
     {
       "year": "2019",
       "title": "Supreme Scholarship of the Graduate School (top 5%)",
-      "organization": "Soochow University"
+      "organization": "Soochow University",
+      "showOnWeb": false
     },
     {
       "year": "2017",
       "title": "Excellent Bachelor Dissertation Award",
-      "organization": "Yangzhou University"
+      "organization": "Yangzhou University",
+      "showOnWeb": false
     },
     {
       "year": "2016",
       "title": "Second Award Scholarship for Excellent Students",
-      "organization": "Yangzhou University"
+      "organization": "Yangzhou University",
+      "showOnWeb": false
     }
   ],
   "emailDisplay": "yaqing [at] cmu [dot] edu",
@@ -231,7 +235,13 @@ window.SITE_DATA = {
       "role": "Guest Editor",
       "journal": "Materials (MDPI)",
       "title": "Advances in 2D Material-Based Electronic Devices",
-      "url": "https://www.mdpi.com/journal/materials/special_issues/GEVN3HOMJ9"
+      "url": "https://www.mdpi.com/journal/materials/special_issues/GEVN3HOMJ9",
+      "flyerImage": "./assets/materials-special-issue-flyer.png",
+      "flyerPdf": "./assets/materials-special-issue-flyer.pdf",
+      "flyerAlt": "Materials special-issue flyer: Advances in 2D Material-Based Electronic Devices, Guest Editor Dr. Yaqing Shen.",
+      "certificatePdf": "./assets/editor-certificate-yaqing-shen.pdf",
+      "bannerImage": "./assets/materials-special-issue-banner.png",
+      "deadline": "19 March 2027"
     }
   ],
   "cvDownload": "./assets/Yaqing-Shen-CV.pdf",
